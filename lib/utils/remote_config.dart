@@ -5,5 +5,6 @@ class RemoteConfig {
     "DOMAIN": "domains",
     "CREATE_ACCOUNT": "accounts",
     "TOKEN": "token",
+    "MESSAGE": "messages",
   };
 }

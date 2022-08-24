@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riseup_mailcheck_task/models/message.dart';
 import 'package:riseup_mailcheck_task/models/token.dart';
 import 'package:riseup_mailcheck_task/utils/api.dart';
 import 'package:riseup_mailcheck_task/utils/utils.dart';
@@ -65,7 +66,8 @@ class _SendEmialPageState extends State<SendEmailPage> {
               ElevatedButton(
                 onPressed: () async {
                   if(isToken) {
-                    //Token response = await api.generateToken(widget.username, widget.password);
+                    Message response = await api.getMessage();
+                    Utils.successToast("${response.hydraTotalItems}");
 
                   } else {
                     Utils.errorToast("Token needed");

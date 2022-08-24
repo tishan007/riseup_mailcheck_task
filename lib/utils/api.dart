@@ -2,9 +2,11 @@ import 'dart:convert';
 import 'package:riseup_mailcheck_task/models/create_account.dart';
 import 'package:riseup_mailcheck_task/models/create_account_error.dart';
 import 'package:riseup_mailcheck_task/models/domain.dart';
+import 'package:riseup_mailcheck_task/models/message.dart';
 import 'package:riseup_mailcheck_task/models/token.dart';
 import 'package:riseup_mailcheck_task/utils/remote_config.dart';
 import 'package:http/http.dart' as http;
+import 'package:riseup_mailcheck_task/utils/utils.dart';
 
 
 class Api{
@@ -84,6 +86,28 @@ class Api{
     } else {
       print("=======token error response======= : "+response.body);
       throw Exception('Failed to load token data');
+    }
+
+  }
+
+  Future getMessage() async {
+
+    String domain = RemoteConfig.config["MESSAGE"]??"";
+    print("MESSAGE URL : "+baseUrl+domain);
+
+    var response = await http.get(
+      Uri.parse(baseUrl + domain),
+      headers: {
+        "Authorization": "Bearer ${Utils.token}",
+      },
+    );
+
+    if (response.statusCode == 200) {
+      print("=======MESSAGE response======= : "+response.body);
+      return messageFromJson(response.body);
+    } else {
+      print("MESSAGE error : "+response.body);
+      throw Exception('Failed to load MESSAGE data');
     }
 
   }

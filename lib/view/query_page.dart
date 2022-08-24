@@ -31,7 +31,7 @@ class _QueryPageState extends State<QueryPage> {
               domainName = response.hydraMember!.first.domain;
 
               if(domainName.isNotEmpty) {
-                Utils.successToast("Successfully this '$domainName' domain retrieved");
+                Utils.successToast("'$domainName' this domain retrieved Successfully");
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) {
                     return CreateAccountPage(domain: domainName,);
