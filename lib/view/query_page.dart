@@ -31,7 +31,7 @@ class _QueryPageState extends State<QueryPage> {
               domainName = response.hydraMember!.first.domain;
 
               if(domainName.isNotEmpty) {
-                Utils.successToast("'$domainName' this domain retrieved Successfully");
+                Utils.successToast("'$domainName' domain retrieved Successfully");
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) {
                     return CreateAccountPage(domain: domainName,);
@@ -47,10 +47,6 @@ class _QueryPageState extends State<QueryPage> {
             child: const Text("Please Query Domain"),
           ),
           SizedBox(height: 30,),
-          //Text("Joy Volanath"),
-          //Text(Utils.domainName),
-          //Text(domainName),
-          //Text(domainController.domain.value.hydraMember!.first.domain),
         ],
       ),
     );

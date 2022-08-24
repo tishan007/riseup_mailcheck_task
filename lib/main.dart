@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:riseup_mailcheck_task/utils/api.dart';
-import 'package:riseup_mailcheck_task/utils/utils.dart';
 import 'package:riseup_mailcheck_task/view/query_page.dart';
 import 'package:system_settings/system_settings.dart';
 
@@ -64,7 +62,7 @@ class _MyAppState extends State<MyApp> {
       return showDialog(
           barrierDismissible: false,
           context: context,
-          builder: (_) => new AlertDialog(
+          builder: (_) => AlertDialog(
             content: Text("Please Check Your Internet",),
             actions: <Widget>[
               TextButton(
@@ -74,7 +72,7 @@ class _MyAppState extends State<MyApp> {
                 },
               ),
               TextButton(
-                child: Text('Close me!'),
+                child: const Text('Close me!'),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -91,13 +89,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        //resizeToAvoidBottomPadding: false,      //for web part it should be commented
         appBar: AppBar(
           centerTitle: true,
           title: const Text("Assignment"),
           backgroundColor: Colors.redAccent,
         ),
-        //body: Text("Joy Volanath"),
         body: QueryPage()
       ),
     );

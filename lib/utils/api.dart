@@ -90,7 +90,7 @@ class Api{
 
   }
 
-  Future getMessage() async {
+  Future<Message> getMessage() async {
 
     String domain = RemoteConfig.config["MESSAGE"]??"";
     print("MESSAGE URL : "+baseUrl+domain);
