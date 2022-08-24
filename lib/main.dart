@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:system_settings/system_settings.dart';
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
@@ -62,6 +63,12 @@ class _MyAppState extends State<MyApp> {
             content: Text("Please Check Your Internet",),
             actions: <Widget>[
               TextButton(
+                child: Text('Go to Settings'),
+                onPressed: () {
+                  SystemSettings.system();
+                },
+              ),
+              TextButton(
                 child: Text('Close me!'),
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -76,11 +83,22 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Center(child: Text("Joy Volanath")),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        //resizeToAvoidBottomPadding: false,      //for web part it should be commented
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text("Flutter"),
+          backgroundColor: Colors.redAccent,
+        ),
+        body: Center(
+          child: Text("Joy Volanath"),
+        ),
       ),
     );
   }
+
+
 
 }
