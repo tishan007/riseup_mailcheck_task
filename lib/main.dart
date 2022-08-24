@@ -3,7 +3,12 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:riseup_mailcheck_task/utils/api.dart';
+import 'package:riseup_mailcheck_task/utils/utils.dart';
+import 'package:riseup_mailcheck_task/view/query_page.dart';
 import 'package:system_settings/system_settings.dart';
+
+import 'models/domain.dart';
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
@@ -89,16 +94,13 @@ class _MyAppState extends State<MyApp> {
         //resizeToAvoidBottomPadding: false,      //for web part it should be commented
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Flutter"),
+          title: const Text("Assignment"),
           backgroundColor: Colors.redAccent,
         ),
-        body: const Center(
-          child: Text("Joy Volanath"),
-        ),
+        //body: Text("Joy Volanath"),
+        body: QueryPage()
       ),
     );
   }
-
-
 
 }
