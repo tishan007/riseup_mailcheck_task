@@ -89,10 +89,10 @@ class _MyAppState extends State<MyApp> {
         //resizeToAvoidBottomPadding: false,      //for web part it should be commented
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Flutter"),
+          title: const Text("Flutter"),
           backgroundColor: Colors.redAccent,
         ),
-        body: Center(
+        body: const Center(
           child: Text("Joy Volanath"),
         ),
       ),
