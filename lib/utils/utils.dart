@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 class Utils {
 
   static String domainName = "";
+  static String token = "";
 
   static void successToast(String successMsg) {
     Fluttertoast.showToast(

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:riseup_mailcheck_task/models/create_account.dart';
 import 'package:riseup_mailcheck_task/models/create_account_error.dart';
 import 'package:riseup_mailcheck_task/models/domain.dart';
+import 'package:riseup_mailcheck_task/models/token.dart';
 import 'package:riseup_mailcheck_task/utils/remote_config.dart';
 import 'package:http/http.dart' as http;
 
@@ -54,6 +55,35 @@ class Api{
     } else {
       print("=======account error response======= : "+response.body);
       return createAccountErrorFromJson(response.body);
+    }
+
+  }
+
+  Future generateToken(String username, String password) async {
+
+    print("username : $username");
+    print("password : $password");
+    String account = RemoteConfig.config["TOKEN"]??"";
+
+    final body = {
+      "address": username,
+      "password": password
+    };
+
+    var response = await http.post(
+      Uri.parse(baseUrl + account),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: jsonEncode(body),
+    );
+
+    if (response.statusCode == 200) {
+      print("=======token response======= : "+response.body);
+      return tokenFromJson(response.body);
+    } else {
+      print("=======token error response======= : "+response.body);
+      throw Exception('Failed to load token data');
     }
 
   }

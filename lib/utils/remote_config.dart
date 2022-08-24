@@ -4,6 +4,6 @@ class RemoteConfig {
     "BASE_URL": "https://api.mail.tm/",
     "DOMAIN": "domains",
     "CREATE_ACCOUNT": "accounts",
-    "LOGIN": "auth/token",
+    "TOKEN": "token",
   };
 }

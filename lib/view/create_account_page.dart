@@ -6,6 +6,8 @@ import 'package:riseup_mailcheck_task/utils/api.dart';
 import 'package:riseup_mailcheck_task/utils/utils.dart';
 import 'dart:convert';
 
+import 'package:riseup_mailcheck_task/view/send_email_page.dart';
+
 class CreateAccountPage extends StatefulWidget {
   final String domain;
 
@@ -111,12 +113,16 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     onPressed: () async {
                       if (_userNameController.text.isNotEmpty && _passwordController.text.isNotEmpty) {
                         var accountResponse = await api.createAccount(
-                            _userNameController.text + "@${widget.domain}",
-                            _passwordController.text);
+                            _userNameController.text + "@${widget.domain}", _passwordController.text);
 
-                        if (jsonEncode(accountResponse).toString().contains("address")) {
+                        if (jsonEncode(accountResponse).toString().contains("quota")) {
                           CreateAccount success = accountResponse;
                           Utils.successToast("${success.address}  created successfully");
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) {
+                              return SendEmailPage(username: success.address, password: _passwordController.text,);
+                            },
+                          ));
                         } else {
                           CreateAccountError error = accountResponse;
                           Utils.errorToast(error.violations.first.message);
