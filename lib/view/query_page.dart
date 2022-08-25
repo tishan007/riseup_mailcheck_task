@@ -25,6 +25,20 @@ class _QueryPageState extends State<QueryPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          TweenAnimationBuilder<double>(
+            tween: Tween<double>(begin: 5, end: 50),
+            duration: const Duration(seconds: 5),
+            builder: (BuildContext context, double size, Widget? child) {
+              return IconButton(
+                iconSize: size,
+                color: Colors.blue,
+                icon: child!,
+                onPressed: () {
+                },
+              );
+            },
+            child: const Icon(Icons.query_builder),
+          ),
           ElevatedButton(
             onPressed: () async {
               Domain response = await api.getDomain();
@@ -46,7 +60,6 @@ class _QueryPageState extends State<QueryPage> {
             },
             child: const Text("Please Query Domain"),
           ),
-          SizedBox(height: 30,),
         ],
       ),
     );
