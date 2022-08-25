@@ -6,12 +6,7 @@ import 'package:riseup_mailcheck_task/utils/api.dart';
 import 'package:riseup_mailcheck_task/utils/utils.dart';
 import 'package:riseup_mailcheck_task/view/create_account_page.dart';
 
-class QueryPage extends StatefulWidget {
-  @override
-  _QueryPageState createState() => _QueryPageState();
-}
-
-class _QueryPageState extends State<QueryPage> {
+class QueryPage extends StatelessWidget {
 
   Api api = Api();
   String domainName = "";
