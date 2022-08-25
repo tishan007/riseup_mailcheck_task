@@ -5,6 +5,8 @@ A Flutter project for email checking, where
     2. account will be opened with credential
     3. after that send email to created account
     4. finally check mail inbox
+
+    - check device internet also
     
     
  Library used :

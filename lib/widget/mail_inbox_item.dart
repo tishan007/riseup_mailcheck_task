@@ -19,18 +19,18 @@ class _MailInboxItemState extends State<MailInboxItem> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text("From : ",),
-                SizedBox(
+                const Text("From : ",),
+                const SizedBox(
                   width: 10,
                 ),
                 Text("${widget.inboxItem.from.address}",),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Text("${widget.inboxItem.from.name}",),
               ],
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -38,7 +38,7 @@ class _MailInboxItemState extends State<MailInboxItem> {
 
               ],
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:riseup_mailcheck_task/controller/domain_controller.dart';
-import 'package:riseup_mailcheck_task/models/domain.dart';
 import 'package:riseup_mailcheck_task/utils/api.dart';
 import 'package:riseup_mailcheck_task/utils/utils.dart';
 import 'package:riseup_mailcheck_task/view/create_account_page.dart';
@@ -35,16 +34,14 @@ class QueryPage extends StatelessWidget {
             child: const Icon(Icons.query_builder),
           ),
           ElevatedButton(
-            onPressed: () async {
-              Domain response = await api.getDomain();
-              domainName = response.hydraMember!.first.domain;
+            onPressed: () {
+              domainName = domainController.domain.value.hydraMember!.first.domain;
 
               if(domainName.isNotEmpty) {
                 Utils.successToast("'$domainName' domain retrieved Successfully");
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) {
-                    //return CreateAccountPage(domain: domainName,);
-                    return CreateAccountPage(domain: domainController.domain.value.hydraMember!.first.domain,);
+                    return CreateAccountPage(domain: domainName,);
                   },
                 ));
               } else {

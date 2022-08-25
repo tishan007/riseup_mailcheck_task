@@ -17,9 +17,9 @@ class DomainController extends GetxController {
 
 
   void getDomainData() async {
-    var domain_value = await api.getDomain();
-    if(domain_value!=null) {
-      domain.value = domain_value;
+    var domainValue = await api.getDomain();
+    if(domainValue!=null) {
+      domain.value = domainValue;
     }
   }
 

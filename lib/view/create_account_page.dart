@@ -70,7 +70,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Flexible(
                       flex: 4,
                       //child: Text("@${widget.domain}")
@@ -78,7 +78,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 TextFormField(
                   keyboardType: TextInputType.text,
                   controller: _passwordController,
@@ -129,7 +129,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       }
                     },
 
-                    child: Text("Create Account"),
+                    child: const Text("Create Account"),
                   ),
                 ),
               ],

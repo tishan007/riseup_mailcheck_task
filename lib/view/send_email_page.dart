@@ -58,13 +58,13 @@ class _SendEmialPageState extends State<SendEmailPage> {
                 },
                 child: const Text("Get Token"),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               (!isToken)
                   ? const Text("You need token to send email", style: TextStyle(color: Colors.pink, fontWeight: FontWeight.bold),)
                   : const Text("You can send an email", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               CheckboxListTile(
@@ -95,7 +95,7 @@ class _SendEmialPageState extends State<SendEmailPage> {
                           },
                           child: const Text("Send Email"),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         ElevatedButton(

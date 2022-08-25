@@ -6,14 +6,12 @@ import 'package:flutter/services.dart';
 import 'package:riseup_mailcheck_task/view/query_page.dart';
 import 'package:system_settings/system_settings.dart';
 
-import 'models/domain.dart';
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
-  // This widget is the root of your application.
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -63,10 +61,10 @@ class _MyAppState extends State<MyApp> {
           barrierDismissible: false,
           context: context,
           builder: (_) => AlertDialog(
-            content: Text("Please Check Your Internet",),
+            content: const Text("Please Check Your Internet",),
             actions: <Widget>[
               TextButton(
-                child: Text('Go to Settings'),
+                child: const Text('Go to Settings'),
                 onPressed: () {
                   SystemSettings.system();
                 },
