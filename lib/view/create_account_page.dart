@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:riseup_mailcheck_task/controller/domain_controller.dart';
 import 'package:riseup_mailcheck_task/models/create_account.dart';
 import 'package:riseup_mailcheck_task/models/create_account_error.dart';
 import 'package:riseup_mailcheck_task/utils/api.dart';
@@ -45,7 +46,6 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   }
 
   _buildBody() {
-    Size screenSize = MediaQuery.of(context).size;
     return ListView(
       children: [
         Padding(
@@ -61,7 +61,6 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                         controller: _userNameController,
                         decoration: InputDecoration(
                           hintText: 'Username',
-                          //hintStyle: Utils.hintTextStyle,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -74,7 +73,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     SizedBox(width: 10,),
                     Flexible(
                       flex: 4,
-                      child: Text("@${widget.domain}")
+                      //child: Text("@${widget.domain}")
+                      child: Text(Get.find<DomainController>().domain.value.hydraMember!.first.domain)
                     ),
                   ],
                 ),
@@ -82,11 +82,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 TextFormField(
                   keyboardType: TextInputType.text,
                   controller: _passwordController,
-                  //style: Utils.inputFormTextStyle,
-                  obscureText: !_passwordVisible,   //This will obscure text dynamically
+                  obscureText: !_passwordVisible,
                   decoration: InputDecoration(
                     hintText: 'Enter your password',
-                    //hintStyle: Utils.hintTextStyle,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -106,7 +104,6 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 const SizedBox(height: 85),
                 DecoratedBox(
                   decoration: BoxDecoration(
-                    //gradient: Utils.blueBtnGradient,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: ElevatedButton(

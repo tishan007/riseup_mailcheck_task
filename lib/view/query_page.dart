@@ -34,8 +34,8 @@ class _QueryPageState extends State<QueryPage> {
                 Utils.successToast("'$domainName' domain retrieved Successfully");
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) {
-                    return CreateAccountPage(domain: domainName,);
-                    //return CreateAccountPage(domain: domainController.domain.value.hydraMember!.first.domain,);
+                    //return CreateAccountPage(domain: domainName,);
+                    return CreateAccountPage(domain: domainController.domain.value.hydraMember!.first.domain,);
                   },
                 ));
               } else {
