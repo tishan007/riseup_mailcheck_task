@@ -39,8 +39,6 @@ class _SendEmialPageState extends State<SendEmailPage> {
   }
 
   _buildMailBody() {
-    print("isToken : $isToken");
-    print("Utils token  : ${Utils.token}");
     return ListView(
       children: [
         Padding(
@@ -78,8 +76,6 @@ class _SendEmialPageState extends State<SendEmailPage> {
                 onChanged: (newValue) {
                   setState(() {
                     checkedValue = newValue!;
-                    print("checkedValue : ");
-                    print(checkedValue);
                   });
                 },
                 controlAffinity:

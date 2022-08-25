@@ -47,7 +47,6 @@ class _CheckInboxState extends State<CheckInbox> {
 
               case ConnectionState.done:
                 if (snapshot.hasError) {
-                  print("Error: ${snapshot.error}");
                   return Text('Error: ${snapshot.error}');
                 }
 
