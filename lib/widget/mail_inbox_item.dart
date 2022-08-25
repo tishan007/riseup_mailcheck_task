@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:riseup_mailcheck_task/models/message.dart';
 
 class MailInboxItem extends StatefulWidget {
   var inboxItem;
