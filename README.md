@@ -17,7 +17,7 @@ A Flutter project for email checking, where
     fluttertoast: ^8.0.9
     flutter_email_sender: ^5.1.0
     
- apk link : https://drive.google.com/file/d/1BWZwxijwhTurTuIF56jS7mH_quBn6rBe/view?usp=sharing
+ apk link : https://drive.google.com/file/d/1ZtNDSOJM4G4gA3TSpAdNTLcD2_xoSVSH/view?usp=sharing
 
 
 ![](images/1_query_domain.png)
